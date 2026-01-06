@@ -3,7 +3,7 @@
 
   <head>
     <meta charset="UTF-8">
-    <title>CYBER AUDIT PROTOTYPE: Home page</title>
+    <title>CYBER AUDIT PROTOTYPE: Audit Service</title>
     <link rel="stylesheet" href="./style.css">
 
   </head>
@@ -13,15 +13,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SecureFirm - Enterprise Security Audits</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Comprehensive Network Security Audit - SecureFirm</title>
+    <link rel="stylesheet" href="css/style.css"> 
 </head>
 <body>
     <header class="main-header">
-        <a href="/" class="logo">[Firm Logo]</a>
+        <a href="index.html" class="logo">SecureFirm Logo</a>
         <nav class="main-nav">
             <ul class="nav-list">
+                <li><a href="index.html">Home</a></li>
                 <li><a href="#">Enterprise Audits</a></li>
+                <li><a href="#">Methodology</a></li>
                 <li><a href="#">Case Studies</a></li>
                 <li><a href="#" class="cta-button">Request Audit Quote</a></li>
             </ul>
@@ -29,30 +31,54 @@
         <button class="menu-toggle" aria-label="Toggle navigation">&#9776;</button>
     </header>
 
-    <main>
-        <section class="hero-section">
-            <h1>Strategic Security Audits for Enterprise Resilience</h1>
-            <p>Gain absolute clarity on your infrastructure's posture before the threats arrive.</p>
-            <a href="#" class="cta-button large">Schedule Consultation Today</a>
-            <div class="trust-signals">
-                <p>Trusted by major financial institutions:</p>
-                </div>
-        </section>
+    <main class="page-container">
+        <p class="breadcrumbs">
+            <a href="index.html">Home</a> &gt; <a href="#">Enterprise Audits</a> &gt; Network Security Audit
+        </p>
 
-        <section class="services-teaser">
-            <h2>Our Core Audit Services</h2>
-            <div class="service-cards-container">
-                <article class="service-card">
-                    <h3>Network Security Audit</h3>
-                    <p>Deep dive penetration testing and configuration review...</p>
-                    <a href="#">View Methodology &rarr;</a>
-                </article>
+        <h1 class="page-title">Comprehensive Network Security Audit</h1>
+        
+        <section class="two-column-layout">
+            
+            <div class="main-content">
+                <h2>1. Audit Scope & Objectives</h2>
+                <ul class="technical-list">
+                    <li>Review of CIS Benchmarks against current infrastructure.</li>
+                    <li>Penetration Testing Scope: External, Internal, and Cloud assets.</li>
+                    <li>Assessment against industry standards (ISO 27001, SOC 2).</li>
+                </ul>
+
+                <h2>2. Technical Standards Used (Progressive Disclosure Area)</h2>
+                <div class="disclosure-section">
+                    <p class="disclosure-title">Click to view detailed testing procedures...</p>
+                    <ul class="detailed-list">
+                        <li>Phase 1: Discovery, Documentation, and Policy Review.</li>
+                        <li>Phase 2: Automated and Manual Vulnerability Scanning.</li>
+                        <li>Phase 3: Exploit Execution and Privilege Escalation Attempts.</li>
+                        <li>Phase 4: Reporting, Risk Scoring, and Remediation Planning.</li>
+                    </ul>
                 </div>
+            </div>
+
+            <aside class="sidebar">
+                <div class="sticky-cta-box">
+                    <h3>Ready to secure your perimeter?</h3>
+                    <a href="#" class="cta-button large">Request Detailed Proposal</a>
+                </div>
+                
+                <div class="resources-box">
+                    <h3>Technical Resources</h3>
+                    <ul class="resource-list">
+                        <li><a href="#">Download: Full Audit Methodology PDF</a></li>
+                        <li><a href="#">Case Study: Financial Institution</a></li>
+                    </ul>
+                </div>
+            </aside>
         </section>
     </main>
     
     <footer>
-        <p>&copy; 2025 SecureFirm. Privacy Policy | Contact Us</p>
+        <p>&copy; 2025 SecureFirm. All Rights Reserved. | <a href="#">Privacy Policy</a></p>
     </footer>
 </body>
 </html>

@@ -1,122 +1,171 @@
 /* ==================================== */
-/* 1. MOBILE-FIRST BASE STYLES (Screen < 768px) */
+/* 0. ROOT VARIABLES & GLOBAL STYLES */
 /* ==================================== */
 
 :root {
     --primary-color: #004a99; /* Deep Blue - Trustworthy */
     --accent-color: #e44d26; /* Orange/Red - CTA Alert */
     --text-color: #333;
+    --light-gray: #f4f4f4;
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     margin: 0;
     color: var(--text-color);
+    background-color: white;
 }
 
-/* Header & Nav */
+/* Reset Lists */
+ul {
+    list-style: disc;
+    margin-left: 20px;
+    padding-left: 0;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+/* Page Container - Max width for content alignment */
+.page-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* ==================================== */
+/* 1. HEADER & NAVIGATION STYLES (Mobile-First) */
+/* ==================================== */
+
 .main-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px 20px;
     background: #fff;
-    border-bottom: 3px solid var(--primary-color); /* Authority Line */
+    border-bottom: 3px solid var(--primary-color);
 }
 
-.main-nav {
-    /* Hide navigation links by default on mobile */
-    display: none; 
+.logo {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: var(--primary-color);
 }
 
+/* Mobile: Hamburger Menu Toggle */
+.main-nav { display: none; } 
 .menu-toggle {
-    display: block; /* Show hamburger button on mobile */
+    display: block; 
     font-size: 24px;
     background: none;
     border: none;
     cursor: pointer;
 }
 
-/* CTAs (Crucial for IT Manager) */
+/* CTAs (Buttons) */
 .cta-button {
     background-color: var(--accent-color);
     color: white;
     padding: 10px 15px;
     text-decoration: none;
     border-radius: 5px;
-    display: block; /* Full width button on mobile */
-    text-align: center;
+    transition: background-color 0.3s;
 }
 
-/* Services Teaser - Vertical Stacking */
-.service-cards-container {
-    display: block; /* Default block stacking */
-    padding: 20px;
+.cta-button:hover {
+    background-color: #c9401f;
 }
-.service-card {
-    border: 1px solid #ddd;
-    margin-bottom: 20px;
+
+/* ==================================== */
+/* 2. AUDIT PAGE SPECIFIC STYLES (Mobile-First) */
+/* ==================================== */
+
+.breadcrumbs {
+    font-size: 0.9em;
+    color: #666;
+    margin: 10px 0;
+}
+
+.page-title {
+    font-size: 2em;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    color: var(--primary-color);
+}
+
+/* Sidebar CTA Box (Mobile: sits below main content) */
+.sticky-cta-box {
+    background-color: var(--light-gray);
     padding: 20px;
     border-radius: 8px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.sticky-cta-box h3 {
+    margin-top: 0;
+    font-size: 1.1em;
+}
+
+.technical-list, .detailed-list {
+    font-size: 0.95em;
+    line-height: 1.8;
+}
+
+.disclosure-section {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 6px;
+}
+
+.disclosure-title {
+    font-weight: bold;
+    color: var(--accent-color);
 }
 
 /* ==================================== */
-/* 2. TABLET/DESKTOP STYLES (min-width: 768px) */
+/* 3. DESKTOP STYLES (MIN-WIDTH: 1024px) */
 /* ==================================== */
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
     
-    .menu-toggle {
-        display: none; /* Hide hamburger button on desktop */
-    }
-
-    .main-nav {
-        display: block; /* Show navigation links */
-    }
-
+    /* Navigation: Horizontal Display */
+    .menu-toggle { display: none; }
+    .main-nav { display: block; }
     .nav-list {
         display: flex;
         list-style: none;
         margin: 0;
         padding: 0;
     }
-
     .nav-list li {
         margin-left: 25px;
     }
-
-    /* Hero Layout Refinement */
-    .hero-section {
-        text-align: left;
-        padding: 60px 5%;
+    
+    /* THE TWO-COLUMN FLEXBOX LAYOUT */
+    .two-column-layout {
+        display: flex; 
+        gap: 40px;      /* Space between the two columns */
+        align-items: flex-start; /* Aligns content to the top */
+    }
+    
+    .main-content {
+        flex: 3; /* Takes approx. 75% of the space */
     }
 
-    /* Use Grid for Service Cards */
-    .service-cards-container {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr); /* Three columns on desktop */
-        gap: 20px;
-        max-width: 1200px;
-        margin: 0 auto;
+    .sidebar {
+        flex: 1; /* Takes approx. 25% of the space */
+        /* You can add 'position: sticky' here for advanced UX */
     }
-
-    .cta-button {
-        display: inline-block; /* Inline button on desktop */
+    
+    /* Adjustments for Desktop CTAs */
+    .cta-button.large {
+        display: block; /* Make the request button fill the box */
         padding: 15px 30px;
         font-size: 1.1em;
-    }
-
-    /* Services Page Two-Column Layout */
-    .two-column-layout {
-        display: flex;
-        padding: 40px 5%;
-    }
-    .main-content {
-        flex: 3; /* Main content takes 3/4 */
-    }
-    .sidebar {
-        flex: 1; /* Sidebar takes 1/4 */
-        padding-left: 30px;
     }
 }
