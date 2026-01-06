@@ -1,0 +1,122 @@
+/* ==================================== */
+/* 1. MOBILE-FIRST BASE STYLES (Screen < 768px) */
+/* ==================================== */
+
+:root {
+    --primary-color: #004a99; /* Deep Blue - Trustworthy */
+    --accent-color: #e44d26; /* Orange/Red - CTA Alert */
+    --text-color: #333;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Header & Nav */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: #fff;
+    border-bottom: 3px solid var(--primary-color); /* Authority Line */
+}
+
+.main-nav {
+    /* Hide navigation links by default on mobile */
+    display: none; 
+}
+
+.menu-toggle {
+    display: block; /* Show hamburger button on mobile */
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* CTAs (Crucial for IT Manager) */
+.cta-button {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: block; /* Full width button on mobile */
+    text-align: center;
+}
+
+/* Services Teaser - Vertical Stacking */
+.service-cards-container {
+    display: block; /* Default block stacking */
+    padding: 20px;
+}
+.service-card {
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* ==================================== */
+/* 2. TABLET/DESKTOP STYLES (min-width: 768px) */
+/* ==================================== */
+
+@media (min-width: 768px) {
+    
+    .menu-toggle {
+        display: none; /* Hide hamburger button on desktop */
+    }
+
+    .main-nav {
+        display: block; /* Show navigation links */
+    }
+
+    .nav-list {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .nav-list li {
+        margin-left: 25px;
+    }
+
+    /* Hero Layout Refinement */
+    .hero-section {
+        text-align: left;
+        padding: 60px 5%;
+    }
+
+    /* Use Grid for Service Cards */
+    .service-cards-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* Three columns on desktop */
+        gap: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .cta-button {
+        display: inline-block; /* Inline button on desktop */
+        padding: 15px 30px;
+        font-size: 1.1em;
+    }
+
+    /* Services Page Two-Column Layout */
+    .two-column-layout {
+        display: flex;
+        padding: 40px 5%;
+    }
+    .main-content {
+        flex: 3; /* Main content takes 3/4 */
+    }
+    .sidebar {
+        flex: 1; /* Sidebar takes 1/4 */
+        padding-left: 30px;
+    }
+}
