@@ -2,46 +2,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SecureFirm - Enterprise Security Audits</title>
+    <title>SecureFirm | Enterprise Security Audits</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header class="main-header">
-        <a href="/" class="logo">[Firm Logo]</a>
-        <nav class="main-nav">
-            <ul class="nav-list">
-                <li><a href="#">Enterprise Audits</a></li>
-                <li><a href="#">Case Studies</a></li>
-                <li><a href="#" class="cta-button">Request Audit Quote</a></li>
-            </ul>
-        </nav>
-        <button class="menu-toggle" aria-label="Toggle navigation">&#9776;</button>
+        <div class="header-container">
+            <a href="index.html" class="logo">SECURE<span>FIRM</span></a>
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="services.html">Methodology</a></li>
+                    <li><a href="#">Case Studies</a></li>
+                    <li class="dropdown">
+                        <button class="cta-button">Quick Quote ▼</button>
+                        <div class="dropdown-menu">
+                            <form id="quote-form-header">
+                                <h4>Request Quote</h4>
+                                <input type="text" placeholder="Company Name" required>
+                                <button type="submit">Send</button>
+                            </form>
+                            <div id="quote-success-header" class="success-message" style="display:none;">✅ Sent!</div>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <main>
         <section class="hero-section">
-            <h1>Strategic Security Audits for Enterprise Resilience</h1>
-            <p>Gain absolute clarity on your infrastructure's posture before the threats arrive.</p>
-            <a href="#" class="cta-button large">Schedule Consultation Today</a>
-            <div class="trust-signals">
-                <p>Trusted by major financial institutions:</p>
+            <div class="hero-content">
+                <span class="badge">Next-Gen Cybersecurity</span>
+                <h1>Strategic Security Audits for <br><span>Enterprise Resilience</span></h1>
+                <p>Verify your security posture with deep-dive technical audits designed for IT leaders.</p>
+                
+                <div class="dropdown">
+                    <button class="cta-button large">Schedule Consultation ▼</button>
+                    <div class="dropdown-menu wide-menu">
+                        <form id="hero-form">
+                            <h4>Book a Strategy Session</h4>
+                            <input type="email" placeholder="Work Email" required>
+                            <input type="date" required>
+                            <button type="submit">Confirm Date</button>
+                        </form>
+                        <div id="hero-success" class="success-message" style="display:none;">
+                            <h4>✅ Consultation Scheduled!</h4>
+                            <p>We've sent a calendar invite to your email.</p>
+                        </div>
+                    </div>
                 </div>
+            </div>
         </section>
 
         <section class="services-teaser">
-            <h2>Our Core Audit Services</h2>
+            <h2>Our Core Services</h2>
             <div class="service-cards-container">
                 <article class="service-card">
-                    <h3>Network Security Audit</h3>
-                    <p>Deep dive penetration testing and configuration review...</p>
-                    <a href="#">View Methodology &rarr;</a>
+                    <div class="icon">🛡️</div>
+                    <h3>Network Audit</h3>
+                    <p>Internal and external penetration testing.</p>
+                    <a href="services.html" class="learn-more">View Methodology &rarr;</a>
                 </article>
-                </div>
+            </div>
         </section>
     </main>
-    
-    <footer>
-        <p>&copy; 2025 SecureFirm. Privacy Policy | Contact Us</p>
-    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>

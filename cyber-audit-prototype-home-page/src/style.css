@@ -1,122 +1,50 @@
-/* ==================================== */
-/* 1. MOBILE-FIRST BASE STYLES (Screen < 768px) */
-/* ==================================== */
-
 :root {
-    --primary-color: #004a99; /* Deep Blue - Trustworthy */
-    --accent-color: #e44d26; /* Orange/Red - CTA Alert */
-    --text-color: #333;
+    --navy: #0a192f;
+    --light-navy: #112240;
+    --cyber-blue: #64ffda;
+    --slate: #8892b0;
+    --white: #e6f1ff;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
+    background-color: #020c1b;
+    color: var(--slate);
+    font-family: sans-serif;
     margin: 0;
-    color: var(--text-color);
 }
 
 /* Header & Nav */
-.main-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 20px;
-    background: #fff;
-    border-bottom: 3px solid var(--primary-color); /* Authority Line */
+.main-header { background: var(--navy); padding: 10px 0; border-bottom: 1px solid var(--cyber-blue); }
+.header-container { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 20px;}
+.logo { color: var(--white); text-decoration: none; font-weight: bold; font-size: 1.5rem; }
+.logo span { color: var(--cyber-blue); }
+.nav-list { display: flex; list-style: none; gap: 20px; align-items: center; }
+.nav-list a { color: var(--white); text-decoration: none; }
+
+/* Dropdown Menu Logic */
+.dropdown { position: relative; display: inline-block; }
+.dropdown-menu { 
+    display: none; position: absolute; background: var(--light-navy); 
+    padding: 20px; border: 1px solid var(--cyber-blue); z-index: 100; right: 0; width: 200px;
 }
+.dropdown:hover .dropdown-menu, .dropdown:focus-within .dropdown-menu { display: block; }
+.wide-menu { width: 300px; left: 50%; transform: translateX(-50%); }
 
-.main-nav {
-    /* Hide navigation links by default on mobile */
-    display: none; 
-}
+/* Forms */
+input, select { width: 100%; padding: 10px; margin-bottom: 10px; background: #0a192f; border: 1px solid var(--slate); color: white; border-radius: 4px; box-sizing: border-box; }
+.cta-button { background: var(--cyber-blue); color: var(--navy); border: none; padding: 10px 20px; font-weight: bold; cursor: pointer; border-radius: 4px; }
+.large { padding: 20px 40px; font-size: 1.2rem; margin-top: 20px;}
 
-.menu-toggle {
-    display: block; /* Show hamburger button on mobile */
-    font-size: 24px;
-    background: none;
-    border: none;
-    cursor: pointer;
-}
+/* Hero & Content */
+.hero-section { text-align: center; padding: 100px 20px; }
+h1 { color: var(--white); font-size: 3rem; }
+h1 span { color: var(--cyber-blue); }
+.badge { border: 1px solid var(--cyber-blue); color: var(--cyber-blue); padding: 5px 10px; border-radius: 20px; font-size: 0.8rem;}
 
-/* CTAs (Crucial for IT Manager) */
-.cta-button {
-    background-color: var(--accent-color);
-    color: white;
-    padding: 10px 15px;
-    text-decoration: none;
-    border-radius: 5px;
-    display: block; /* Full width button on mobile */
-    text-align: center;
-}
-
-/* Services Teaser - Vertical Stacking */
-.service-cards-container {
-    display: block; /* Default block stacking */
-    padding: 20px;
-}
-.service-card {
-    border: 1px solid #ddd;
-    margin-bottom: 20px;
-    padding: 20px;
-    border-radius: 8px;
-}
-
-/* ==================================== */
-/* 2. TABLET/DESKTOP STYLES (min-width: 768px) */
-/* ==================================== */
-
-@media (min-width: 768px) {
-    
-    .menu-toggle {
-        display: none; /* Hide hamburger button on desktop */
-    }
-
-    .main-nav {
-        display: block; /* Show navigation links */
-    }
-
-    .nav-list {
-        display: flex;
-        list-style: none;
-        margin: 0;
-        padding: 0;
-    }
-
-    .nav-list li {
-        margin-left: 25px;
-    }
-
-    /* Hero Layout Refinement */
-    .hero-section {
-        text-align: left;
-        padding: 60px 5%;
-    }
-
-    /* Use Grid for Service Cards */
-    .service-cards-container {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr); /* Three columns on desktop */
-        gap: 20px;
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-
-    .cta-button {
-        display: inline-block; /* Inline button on desktop */
-        padding: 15px 30px;
-        font-size: 1.1em;
-    }
-
-    /* Services Page Two-Column Layout */
-    .two-column-layout {
-        display: flex;
-        padding: 40px 5%;
-    }
-    .main-content {
-        flex: 3; /* Main content takes 3/4 */
-    }
-    .sidebar {
-        flex: 1; /* Sidebar takes 1/4 */
-        padding-left: 30px;
-    }
-}
+/* Two Column Layout */
+.page-container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; }
+.two-column-layout { display: flex; gap: 50px; }
+.main-content { flex: 3; }
+.sidebar { flex: 1; }
+.sticky-box { background: var(--light-navy); padding: 20px; border-radius: 8px; border-left: 4px solid var(--cyber-blue); }
+.success-message { text-align: center; color: var(--cyber-blue); }
